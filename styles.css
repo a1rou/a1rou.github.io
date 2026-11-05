@@ -334,6 +334,50 @@ h1 {
   font-weight: 500;
 }
 
+.hero-portrait {
+  position: absolute;
+  z-index: 1;
+  right: max(48px, calc((100% - 1344px) / 2));
+  bottom: 58px;
+  width: clamp(228px, 21vw, 310px);
+  aspect-ratio: 18 / 25;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(232, 230, 226, .2);
+  background: #272622;
+}
+
+.hero-portrait::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 17, 16, 0) 52%, rgba(17, 17, 16, .58));
+  content: "";
+  pointer-events: none;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.04) brightness(.82);
+}
+
+.hero-portrait figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #e5e2dc;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+
 .section {
   position: relative;
   display: grid;
@@ -527,6 +571,31 @@ h2 em {
 
 .jewelry-visual {
   background: linear-gradient(140deg, #2d2c29, #1b1a19 65%, #171716);
+}
+
+.demo-visual {
+  padding: 20px;
+  background: #dfe3e8;
+}
+
+.demo-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(.38) contrast(1.04) brightness(.8);
+  transition: transform .7s var(--ease), filter .35s ease;
+}
+
+.demo-visual::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 17, 16, .22), transparent 32%, rgba(17, 17, 16, .5));
+  content: "";
+  pointer-events: none;
 }
 
 .forest-visual {
@@ -749,6 +818,12 @@ footer {
   .project:focus-within .visual-art {
     transform: translate(-50%, -50%) scale(1.05);
   }
+
+  .project:hover .demo-visual img,
+  .project:focus-within .demo-visual img {
+    transform: scale(1.035);
+    filter: grayscale(.22) contrast(1.04) brightness(.88);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -772,6 +847,12 @@ footer {
   @keyframes artwork-enter {
     from { opacity: .7; transform: translate(-50%, -44%) scale(.96); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-portrait {
+    display: none;
   }
 }
 
