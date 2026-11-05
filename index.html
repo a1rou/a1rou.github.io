@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Портфолио Родиона Ислибаева — ML Engineer и Data Scientist."
+    />
+    <meta name="theme-color" content="#111110" />
+    <title>Rodion Islibaev — ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К основному содержимому</a>
+
+    <header class="site-header" data-site-header>
+      <a class="brand" href="#top" aria-label="RI• — на главную">RI<span>•</span></a>
+      <nav aria-label="Основная навигация">
+        <a href="#projects">Проекты</a>
+        <a href="#skills">Навыки</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <div class="header-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Open to work</span>
+      </div>
+      <a class="header-link" href="https://github.com/a1rou" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Открыт к стажировкам и junior-ролям</p>
+          <h1 id="hero-title">Родион<br />Ислибаев<span class="accent">.</span></h1>
+          <p class="hero-role">Machine Learning Engineer <span>/</span> Data Scientist</p>
+          <p class="hero-description">
+            Превращаю данные и ML-модели в понятные прикладные решения — от исследования и валидации до работающего MVP.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Смотреть проекты <span>↓</span></a>
+            <a class="button button-quiet" href="https://github.com/a1rou" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <dl class="hero-facts" aria-label="Краткая информация">
+          <div><dt>База</dt><dd>Уфа, Россия</dd></div>
+          <div><dt>Фокус</dt><dd>Tabular ML · Applied AI</dd></div>
+          <div><dt>Образование</dt><dd>УУНиТ · Школа 21</dd></div>
+        </dl>
+      </section>
+
+      <section class="intro section" aria-labelledby="about-title">
+        <div class="section-marker">01</div>
+        <div class="section-content intro-layout">
+          <h2 id="about-title">Разработка с опорой на <em>данные</em>, а не на догадки.</h2>
+          <div class="intro-text">
+            <p>
+              Учусь на третьем курсе программной инженерии в УУНиТ и прохожу направление Data Science в Школе 21. Мне интересно находить полезные закономерности в данных, проверять их на корректной валидации и превращать модели в работающие продукты.
+            </p>
+            <p>
+              Моя сильная сторона — самостоятельная инженерная работа: могу разобраться в задаче, собрать прототип, объяснить ограничения решения и презентовать его заказчику.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects" aria-labelledby="projects-title">
+        <div class="section-marker">02</div>
+        <div class="section-content">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Избранные работы</p>
+              <h2 id="projects-title">Проекты</h2>
+            </div>
+            <p>Классический ML, мультимодальные модели и прикладная разработка.</p>
+          </div>
+
+          <article class="project project-featured">
+            <div class="project-index">01</div>
+            <div class="project-main">
+              <p class="project-type">Хакатон · индивидуальный проект</p>
+              <h3>AI-сервис оценки<br />ювелирных изделий</h3>
+              <p class="project-summary">
+                MVP для предварительной дистанционной оценки золотых украшений по фотографиям и анкете клиента для кейса ООО «СКС Ломбард».
+              </p>
+              <ul class="project-points">
+                <li>Интегрировал мультимодальную Qwen-модель для анализа типа изделия, состояния, дефектов и оценки веса.</li>
+                <li>Реализовал Streamlit-интерфейс, нормализацию JSON-ответов и расчёт стоимости по тарифной сетке.</li>
+                <li>Самостоятельно собрал, развернул и защитил MVP перед представителями заказчика.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://airouu-hackathon.streamlit.app/" target="_blank" rel="noreferrer">Открыть демо <span>↗</span></a>
+                <a href="https://github.com/a1rou/hackathon" target="_blank" rel="noreferrer">Исходный код <span>↗</span></a>
+              </div>
+            </div>
+            <div class="project-visual jewelry-visual" aria-hidden="true">
+              <div class="visual-meta"><span>Qwen / Streamlit</span><span>01</span></div>
+              <svg class="visual-art jewelry-art" viewBox="0 0 400 320" fill="none">
+                <defs>
+                  <linearGradient id="silver-ring" x1="92" y1="62" x2="303" y2="259" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#66635e" />
+                    <stop offset=".24" stop-color="#e0ddd7" />
+                    <stop offset=".49" stop-color="#77736e" />
+                    <stop offset=".72" stop-color="#c7c2ba" />
+                    <stop offset="1" stop-color="#55534e" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="176" rx="100" ry="72" transform="rotate(-28 200 176)" stroke="#d9d6cf" stroke-opacity=".12" />
+                <ellipse cx="200" cy="164" rx="86" ry="105" transform="rotate(-28 200 164)" stroke="url(#silver-ring)" stroke-width="16" />
+                <ellipse cx="200" cy="164" rx="76" ry="95" transform="rotate(-28 200 164)" stroke="#e9e6e0" stroke-opacity=".26" />
+                <path d="M211 41 233 28 255 41 262 63 233 85 204 63 211 41Z" fill="#bdb8b0" fill-opacity=".3" stroke="#d9d6cf" stroke-opacity=".7" />
+                <path d="m211 41 22 44 22-44m-51 22h58m-29-35v57" stroke="#d9d6cf" stroke-opacity=".42" />
+              </svg>
+              <div class="visual-caption"><span>Анализ изображений</span><span>AI MVP</span></div>
+            </div>
+          </article>
+
+          <article class="project project-secondary">
+            <div class="project-index">02</div>
+            <div class="project-main">
+              <p class="project-type">Школа 21 · supervised learning</p>
+              <h3>Decision Trees<br />&amp; Ensembles</h3>
+              <p class="project-summary">
+                Бинарная классификация проблемных автомобилей на табличных данных Don’t Get Kicked.
+              </p>
+              <ul class="project-points">
+                <li>Построил временное train / validation / test-разбиение и исключил утечку данных из будущего.</li>
+                <li>Реализовал с нуля CART, Random Forest, GBDT и Extra Trees.</li>
+                <li>Сравнил CatBoost, LightGBM и XGBoost; применил early stopping и оценку по ROC-AUC и Gini.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/a1rou/ML5_Decision_trees_School21" target="_blank" rel="noreferrer">Исходный код <span>↗</span></a>
+              </div>
+            </div>
+            <div class="project-visual forest-visual" aria-hidden="true">
+              <div class="visual-meta"><span>Decision trees / ML</span><span>02</span></div>
+              <svg class="visual-art tree-art" viewBox="0 0 400 320" fill="none">
+                <path d="M200 63v48m0 0-90 55m90-55 90 55M110 166v32m0 0-50 51m50-51 50 51m130-83v32m0 0-50 51m50-51 50 51" stroke="#d7d3cc" stroke-opacity=".5" stroke-width="1.5" />
+                <circle cx="200" cy="63" r="10" fill="#dfdcd6" />
+                <circle cx="110" cy="166" r="7" fill="#bcb8b0" />
+                <circle cx="290" cy="166" r="7" fill="#bcb8b0" />
+                <circle cx="60" cy="249" r="5" fill="#8e8a83" />
+                <circle cx="160" cy="249" r="5" fill="#8e8a83" />
+                <circle cx="240" cy="249" r="5" fill="#8e8a83" />
+                <circle cx="340" cy="249" r="5" fill="#8e8a83" />
+                <circle cx="200" cy="63" r="23" stroke="#dfdcd6" stroke-opacity=".14" />
+              </svg>
+              <div class="visual-caption"><span>Классификация данных</span><span>School 21</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills" aria-labelledby="skills-title">
+        <div class="section-marker">03</div>
+        <div class="section-content">
+          <div class="section-heading compact-heading">
+            <div><p class="eyebrow">Инструменты и методы</p><h2 id="skills-title">ML-стек</h2></div>
+          </div>
+          <div class="skill-groups">
+            <div class="skill-group"><p>Язык и данные</p><ul><li>Python</li><li>NumPy</li><li>pandas</li><li>SQL</li><li>Jupyter</li></ul></div>
+            <div class="skill-group"><p>Модели</p><ul><li>scikit-learn</li><li>CatBoost</li><li>LightGBM</li><li>XGBoost</li><li>Qwen / LLM API</li></ul></div>
+            <div class="skill-group"><p>Практика ML</p><ul><li>Feature engineering</li><li>Model validation</li><li>Hyperparameter tuning</li><li>ROC-AUC · Gini</li><li>Data leakage control</li></ul></div>
+            <div class="skill-group"><p>Разработка</p><ul><li>Streamlit</li><li>Git / GitHub</li><li>Docker</li><li>Linux / Bash</li><li>REST API</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="education section" aria-labelledby="education-title">
+        <div class="section-marker">04</div>
+        <div class="section-content education-layout">
+          <div><p class="eyebrow">Сейчас</p><h2 id="education-title">Учусь,<br />строю, исследую.</h2></div>
+          <div class="education-list">
+            <article><p>2024 — 2028</p><div><h3>УУНиТ</h3><span>Программная инженерия · бакалавриат</span></div></article>
+            <article><p>2026 — сейчас</p><div><h3>Школа 21, Уфа</h3><span>Data Science · проектное обучение</span></div></article>
+            <article><p>Дополнительно</p><div><h3>МФТИ</h3><span>Алгоритмы и структуры данных · основы C++</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-noise" aria-hidden="true"></div>
+        <p class="eyebrow">Связаться</p>
+        <h2 id="contact-title">Есть задача,<br />где важны <em>данные?</em></h2>
+        <p>Открыт к стажировкам и junior-позициям в ML Engineering и Data Science.</p>
+        <div class="contact-links">
+          <a href="mailto:airouu.kai@gmail.com">airouu.kai@gmail.com <span>↗</span></a>
+          <a href="https://t.me/airouuu" target="_blank" rel="noreferrer">Telegram <span>↗</span></a>
+          <a href="https://github.com/a1rou" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>© <span id="year">2026</span> Rodion Islibaev</span><span>Ufa · Remote</span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
