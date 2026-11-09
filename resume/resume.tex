@@ -1,0 +1,165 @@
+% Compile with Tectonic or XeLaTeX:
+% tectonic --keep-logs --keep-intermediates resume.tex
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1.45cm]{geometry}
+\usepackage{fontspec}
+\setmainfont[
+  Path=/usr/share/fonts/truetype/lato/,
+  Extension=.ttf,
+  UprightFont=Lato-Regular,
+  BoldFont=Lato-Bold,
+  ItalicFont=Lato-Italic,
+  BoldItalicFont=Lato-BoldItalic
+]{Lato-Regular}
+\newfontfamily\displayfont[
+  Path=/usr/share/fonts/truetype/lato/,
+  Extension=.ttf,
+  UprightFont=Lato-Regular,
+  BoldFont=Lato-Black
+]{Lato-Regular}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\russianfont[
+  Path=/usr/share/fonts/truetype/lato/,
+  Extension=.ttf,
+  UprightFont=Lato-Regular,
+  BoldFont=Lato-Bold
+]{Lato-Regular}
+\newfontfamily\cyrillicfont[
+  Path=/usr/share/fonts/truetype/lato/,
+  Extension=.ttf,
+  UprightFont=Lato-Regular,
+  BoldFont=Lato-Bold
+]{Lato-Regular}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{microtype}
+
+\definecolor{ink}{HTML}{171918}
+\definecolor{slate}{HTML}{4E5E63}
+\definecolor{muted}{HTML}{6E7776}
+\definecolor{line}{HTML}{D5D9D6}
+\definecolor{accent}{HTML}{3B7180}
+\definecolor{paper}{HTML}{FAFAF7}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  pdfauthor={Rodion Islibaev},
+  pdftitle={Rodion Islibaev — ML Engineer / Data Scientist},
+  pdfsubject={Resume}
+}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.12}
+\setlist[itemize]{leftmargin=1.15em,itemsep=2.5pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+\newcommand{\sectiontitle}[1]{%
+  \vspace{10pt}%
+  {\color{accent}\fontsize{8.6}{10}\selectfont\bfseries\MakeUppercase{#1}}\par
+  \vspace{3pt}\color{line}\rule{\linewidth}{0.55pt}\color{ink}\vspace{5pt}
+}
+\newcommand{\itemtitle}[2]{%
+  {\fontsize{10.5}{12}\selectfont\bfseries #1}\hfill {\color{muted}\fontsize{8.6}{10}\selectfont #2}\par
+}
+\newcommand{\itemmeta}[1]{%
+  {\color{slate}\fontsize{8.8}{10.5}\selectfont #1}\par\vspace{2pt}
+}
+\newcommand{\tag}[1]{%
+  \fcolorbox{line}{paper}{\strut\hspace{3pt}{\color{slate}\fontsize{7.7}{9}\selectfont #1}\hspace{3pt}}\hspace{3pt}%
+}
+
+\begin{document}
+\color{ink}
+
+{\displayfont\fontsize{25}{29}\selectfont\bfseries Родион Ислибаев}\par
+\vspace{2pt}
+{\color{accent}\fontsize{12}{15}\selectfont\bfseries ML Engineer \;·\; Data Scientist}\par
+\vspace{7pt}
+\begin{tabularx}{\linewidth}{@{}Y r@{}}
+\color{slate}\fontsize{9}{11}\selectfont Уфа \;·\; открыт к стажировкам и junior-ролям \;·\; удалённо / гибрид &
+\fontsize{8.8}{11}\selectfont \href{mailto:airouu.kai@gmail.com}{airouu.kai@gmail.com} \;·\; \href{https://t.me/airouuu}{@airouuu} \\
+& \fontsize{8.8}{11}\selectfont \href{https://github.com/a1rou}{github.com/a1rou} \;·\; \href{https://a1rou.github.io/}{a1rou.github.io}
+\end{tabularx}
+\vspace{8pt}\color{line}\rule{\linewidth}{0.8pt}\color{ink}
+
+\begin{minipage}[t]{0.655\linewidth}
+\sectiontitle{Профиль}
+{\fontsize{9.4}{13}\selectfont
+Студент программной инженерии и участник направления Data Science в Школе 21. Собираю прикладные ML-решения: от подготовки данных и корректной валидации до работающего MVP и презентации заказчику. Основной фокус — табличные данные, классическое ML и мультимодальные AI-сервисы.
+}
+
+\sectiontitle{Избранные проекты}
+\itemtitle{AI-сервис оценки ювелирных изделий}{2026 · Хакатон}
+\itemmeta{Python · Streamlit · Qwen · Yandex Cloud AI Studio · Bitrix24 API}
+\begin{itemize}
+  \item Самостоятельно спроектировал, реализовал и развернул MVP предварительной оценки золотых украшений по фотографиям для кейса ООО «СКС Ломбард».
+  \item Интегрировал мультимодальную модель Qwen для анализа типа изделия, состояния, дефектов, вставок и ориентировочного веса; нормализовал структурированные JSON-ответы.
+  \item Реализовал расчёт предварительной суммы займа и выкупа по тарифной сетке, пробе, весу и состоянию; представил решение заказчику.
+\end{itemize}
+{\fontsize{8.4}{10}\selectfont \href{https://airouu-hackathon.streamlit.app/}{Демо} \;·\; \href{https://github.com/a1rou/hackathon}{GitHub}}\par
+
+\vspace{7pt}
+\itemtitle{Decision Trees \& Ensembles}{2026 · School 21}
+\itemmeta{Python · NumPy · pandas · scikit-learn · CatBoost · LightGBM · XGBoost}
+\begin{itemize}
+  \item Построил временное train / validation / test-разбиение по PurchDate, исключив утечку данных из будущего.
+  \item Реализовал с нуля CART, Random Forest, Gradient Boosting Decision Trees и Extra Trees; сравнил с CatBoost, LightGBM и XGBoost.
+  \item Настроил модели с early stopping и оценкой по ROC-AUC и Gini; проверил переобучение на отложенной test-выборке.
+\end{itemize}
+{\fontsize{8.4}{10}\selectfont \href{https://github.com/a1rou/ML5_Decision_trees_School21}{GitHub}}\par
+
+\sectiontitle{Дополнительные проекты}
+{\fontsize{8.9}{11.5}\selectfont
+Supervised learning, регрессия, валидация моделей, классификация и feature engineering. Полный список и ноутбуки: \href{https://github.com/a1rou}{github.com/a1rou}.
+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.305\linewidth}
+\sectiontitle{Образование}
+\itemtitle{УУНиТ}{2024–2028}
+\itemmeta{Бакалавриат, программная инженерия\\Уфа}
+\vspace{7pt}
+\itemtitle{Школа 21, Уфа}{2026–н.в.}
+\itemmeta{Направление Data Science\\Проектное обучение}
+\vspace{7pt}
+\itemtitle{МФТИ}{Дополнительно}
+\itemmeta{Алгоритмы и структуры данных\\Основы C++}
+
+\sectiontitle{Технический стек}
+\tag{Python}\tag{NumPy}\tag{pandas}\tag{SQL}\tag{MySQL}\par\vspace{4pt}
+\tag{scikit-learn}\tag{CatBoost}\tag{LightGBM}\tag{XGBoost}\par\vspace{4pt}
+\tag{Streamlit}\tag{Docker}\tag{Git}\tag{Linux}\tag{Bash}\tag{Jupyter}
+
+\sectiontitle{ML-практика}
+{\fontsize{8.9}{11.5}\selectfont
+Feature engineering\\
+Model validation\\
+Hyperparameter tuning\\
+Data leakage control\\
+ROC-AUC · Gini · F1\\
+Model explainability
+}
+
+\sectiontitle{Языки}
+\begin{tabularx}{\linewidth}{@{}l Y@{}}
+\fontsize{8.8}{11}\selectfont Русский & \fontsize{8.8}{11}\selectfont Родной \\
+\fontsize{8.8}{11}\selectfont English & \fontsize{8.8}{11}\selectfont C1 · Advanced
+\end{tabularx}
+\end{minipage}
+
+\vfill
+\vspace{6pt}\color{line}\rule{\linewidth}{0.55pt}\color{muted}
+\begin{center}
+{\fontsize{7.7}{9}\selectfont Родион Ислибаев \;·\; Резюме \;·\; Обновлено: ноябрь 2026}
+\end{center}
+
+\end{document}
