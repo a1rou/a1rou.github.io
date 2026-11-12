@@ -598,6 +598,7 @@ h2 em {
 
 .demo-visual {
   align-self: start;
+  width: 100%;
   aspect-ratio: 1440 / 1020;
   min-height: 260px;
   padding: 20px;
