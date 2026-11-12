@@ -100,13 +100,17 @@
               <p class="project-type">Хакатон · индивидуальный проект</p>
               <h3>AI-сервис оценки<br />ювелирных изделий</h3>
               <p class="project-summary">
-                MVP для предварительной дистанционной оценки золотых украшений по фотографиям и анкете клиента для кейса ООО «СКС Ломбард».
+                MVP для кейса ООО «СКС Ломбард»: клиент может получить ориентир суммы займа по фотографиям и анкете до визита в отделение.
               </p>
               <ul class="project-points">
-                <li>Интегрировал мультимодальную Qwen-модель для анализа типа изделия, состояния, дефектов и оценки веса.</li>
-                <li>Реализовал Streamlit-интерфейс, нормализацию JSON-ответов и расчёт стоимости по тарифной сетке.</li>
-                <li>Самостоятельно собрал, развернул и защитил MVP перед представителями заказчика.</li>
+                <li>Подключил готовую мультимодальную модель Qwen для анализа типа изделия, состояния, дефектов и ориентировочного веса.</li>
+                <li>Самостоятельно реализовал извлечение и нормализацию JSON-ответов; при недоступности модели сервис показывает расчёт по анкете с предупреждением.</li>
+                <li>Разработал расчёт по тарифам, правила оценки дефектов, интерфейс и CRM-адаптер; покрыл расчёт и нормализацию тестами.</li>
               </ul>
+              <div class="project-insights">
+                <p><strong>Граница MVP</strong> Сервис не подтверждает подлинность и пробу металла по фото. Окончательную оценку проводит товаровед при очном осмотре.</p>
+                <p><strong>Следующая итерация</strong> Проверить качество визуального анализа на размеченных примерах и исследовать признаки подделок, сохранив финальную проверку за специалистом.</p>
+              </div>
               <div class="project-links">
                 <a href="https://airouu-hackathon.streamlit.app/" target="_blank" rel="noreferrer">Открыть демо <span>↗</span></a>
                 <a href="https://github.com/a1rou/hackathon" target="_blank" rel="noreferrer">Исходный код <span>↗</span></a>
@@ -131,32 +135,36 @@
               <p class="project-type">Школа 21 · supervised learning</p>
               <h3>Decision Trees<br />&amp; Ensembles</h3>
               <p class="project-summary">
-                Бинарная классификация проблемных автомобилей на табличных данных Don’t Get Kicked.
+                Учебный проект по данным аукциона Don’t Get Kicked: оценка риска неудачной покупки автомобиля до сделки.
               </p>
               <ul class="project-points">
-                <li>Построил временное train / validation / test-разбиение и исключил утечку данных из будущего.</li>
-                <li>Реализовал с нуля CART, Random Forest, GBDT и Extra Trees.</li>
-                <li>Сравнил CatBoost, LightGBM и XGBoost; применил early stopping и оценку по ROC-AUC и Gini.</li>
+                <li>Разделил данные по PurchDate на train / validation / test; кодировщик категорий и правила заполнения пропусков обучил на train.</li>
+                <li>Реализовал с нуля CART, Random Forest, GBDT и Extra Trees; сравнил подходы с CatBoost, LightGBM и XGBoost.</li>
+                <li>Выбрал XGBoost по validation и оценил качество на отложенной по времени test-выборке.</li>
               </ul>
+              <div class="project-insights">
+                <p><strong>Возможное применение</strong> Закупщик мог бы использовать риск-скор, чтобы приоритизировать автомобили для ручной проверки; в реальном процессе решение не тестировалось.</p>
+                <p><strong>Следующий шаг</strong> Измерить precision@K и recall@K при ограниченном числе проверок, прежде чем оценивать продуктовую пользу.</p>
+              </div>
               <div class="project-links">
                 <a href="https://github.com/a1rou/ML5_Decision_trees_School21" target="_blank" rel="noreferrer">Исходный код <span>↗</span></a>
+                <a href="https://github.com/a1rou/ML5_Decision_trees_School21/blob/develop/src/task.ipynb" target="_blank" rel="noreferrer">Ноутбук с результатами <span>↗</span></a>
               </div>
             </div>
-            <div class="project-visual forest-visual" aria-hidden="true">
-              <div class="visual-meta"><span>Decision trees / ML</span><span>02</span></div>
-              <svg class="visual-art tree-art" viewBox="0 0 400 320" fill="none">
-                <path d="M200 63v48m0 0-90 55m90-55 90 55M110 166v32m0 0-50 51m50-51 50 51m130-83v32m0 0-50 51m50-51 50 51" stroke="#d7d3cc" stroke-opacity=".5" stroke-width="1.5" />
-                <circle cx="200" cy="63" r="10" fill="#dfdcd6" />
-                <circle cx="110" cy="166" r="7" fill="#bcb8b0" />
-                <circle cx="290" cy="166" r="7" fill="#bcb8b0" />
-                <circle cx="60" cy="249" r="5" fill="#8e8a83" />
-                <circle cx="160" cy="249" r="5" fill="#8e8a83" />
-                <circle cx="240" cy="249" r="5" fill="#8e8a83" />
-                <circle cx="340" cy="249" r="5" fill="#8e8a83" />
-                <circle cx="200" cy="63" r="23" stroke="#dfdcd6" stroke-opacity=".14" />
-              </svg>
-              <div class="visual-caption"><span>Классификация данных</span><span>School 21</span></div>
-            </div>
+            <figure class="project-visual metric-visual" aria-labelledby="metric-title">
+              <figcaption class="visual-meta"><span id="metric-title">XGBoost / результат эксперимента</span><span>02</span></figcaption>
+              <div class="metric-main">
+                <p class="metric-label">ROC-AUC · отложенный test</p>
+                <p class="metric-value">0.7532</p>
+                <p class="metric-description">Модель выбрана по validation; test следует позже по времени.</p>
+              </div>
+              <dl class="metric-details">
+                <div><dt>Gini · validation</dt><dd>0.4958</dd></div>
+                <div><dt>Gini · test</dt><dd>0.5064</dd></div>
+                <div><dt>Объектов · train / validation / test</dt><dd>24 232 / 24 414 / 24 337</dd></div>
+              </dl>
+              <p class="metric-footnote">Don’t Get Kicked · временное разбиение по PurchDate</p>
+            </figure>
           </article>
         </div>
       </section>
